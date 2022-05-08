@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #f1f5f8;
+	letter-spacing: 0.1em;
+}
+
+img{
+	display: block;
+	max-width: 100%;
+	border: 4px solid #c59d5f;
+	border-radius: 1em;
+	width: 100%;
+	height: 20rem;
+	object-fit: cover;
+}
+
+h1{
+	font-size: 3.5rem;
+	text-transform: capitalize;
+	margin: 1em 0 0 0;
+	position: relative;
+}
+
+h1::before{
+	position: absolute;
+	content: '';
+	bottom: -10px;
+	width: 100%;
+	height: 4px; 
+	background: #c59d5f;
+	transform: scaleX(0.4);
+}
+
+h4{
+	color: #60767D;
+}
+
+h5{
+	color: #cbab77;
+	position: relative;
+}
+
+h5::before{
+	position: absolute;
+	top: 0;
+	left: -1rem;
+	content: '\0024';
+}
+
+p{
+	font-size: 2rem;
+	padding: 0.5em 0 0 0;
+	color: #67829c;
+}
+
+hr{
+	color: #e1e7ed;
+}
+
+.buttons{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1.1em;
+	padding: 3em 0 5em 0;
+}
+
+.btn{
+	text-transform: capitalize;
+	padding: 0.5em 1em;
+	background: #f1f5f8;
+	color: #cfb183;
+	border: 0;
+	outline: 3px solid #cfb183;
+	border-radius: 0.5em;
+	transition: color 200ms ease-in-out;
+	transition: background 200ms ease-in-out;
+	cursor: pointer;
+}
+
+.btn:hover{
+	color: #f1f5f8;
+	background: #cfb183;
+}
+
+.meals{
+	width: min(400px,70%);
+	display: flex;
+	flex-direction: column;
+	gap: 5em;
+	padding: 0 0 5em 0
+}
+
+.meal{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.name-price{
+	text-transform: capitalize;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 2.2rem;
+	padding: 0.25em;
+}
+
+.description{
+	padding: 0 1em;
+}
+
+@media (min-width: 760px){
+	img{
+	height: 17rem;
+	}
+	.meals{
+	width: min(700px,90%);
+	}
+	.meal{
+	display: grid;
+	grid-template-columns: 1.5fr 2fr;
+	place-items: center;
+	}
+}
+
+@media (min-width: 1150px){
+	img{
+		height: 15rem;
+	}
+	.meals{
+		width: min(1200px,90%);
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 5em;
+	}
+}
